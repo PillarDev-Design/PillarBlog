@@ -31,28 +31,31 @@ def home(request):
 # * directory (Load in which type of directory)
 #----------------------------------------------------------
 def directory(request, post_type=None):
-
+    
+    blog_directory = False
+    #search_item_type = None
+    #search_category_type = None
+    #search_identifier = None
+    #search_item_type_blog = False
+    #search_category_type_blog = False
     # Set search types according to the post type
     if post_type == 'blog':
         search_item_type = 'BlogPost'
         search_category_type = 'BlogCategory'
-
-    search_item_type = None
-    search_category_type = None
+        blog_directory = True
 
     directory_item = None
     directory_category = None
     directory_sides = None
     
     # Run the loop to set the return dict to the post type results
-    #directory_item = models.__dict__[search_item_type].objects.all().order_by('pub_date')
-    #directory_category = models.__dict__[search_category_type].objects.all()
-    #directory_sides = models.__dict__[search_item_type].objects.all().order_by('-pub_date')[:5]
+    directory_item = models.__dict__[search_item_type].objects.all().order_by('pub_date')
+    directory_category = models.__dict__[search_category_type].objects.all()
+    directory_sides = models.__dict__[search_item_type].objects.all().order_by('-pub_date')[:5]
 
     response_dict = {
-            'search_item_type':search_item_type,
+            'blog_directory':blog_directory,
             'directory_item':directory_item,
-            'search_category_type':search_category_type,
             'directory_category':directory_category,
             'directory_sides':directory_sides,
             }
