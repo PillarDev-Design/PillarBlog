@@ -18,10 +18,18 @@
     </div>
     <div id='right_side_wrapper'>
         <div id='content'>
-            <center><h3>Directory Content</h3></center>
-            {% for item in directory_item %}
-                {{item.title}}
-            {% endfor %}
+            {% if blog_directory %}
+                <h3>Blog Directory</h3>
+                {% for blog_category in directory_category %}
+                    <h3>{{blog_category.category}}</h3>
+                    {% for blog_item in blog_category.blogpost_set.all %}
+                        <a href='/blog/{{blog_item.slug}}'
+                            title='{{blog_item.title}}'>{{blog_item.title}}</a><br />
+                        {{blog_item.description}}<br />
+                    {% endfor %}
+                    <hr />
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
     <div class='clear'></div>

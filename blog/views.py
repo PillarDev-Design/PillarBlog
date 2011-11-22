@@ -18,7 +18,7 @@ def home(request):
     
     main_page_notes = models.MainPageNote.objects.all().order_by('-pub_date')[:5]
     post_type = models.PostType.objects.all()
-    front_page_blogs = models.BlogPost.objects.all().order_by('-pub_date')[:3]
+    front_page_blogs = models.BlogPost.objects.all().order_by('-pub_date')[:5]
     
     response_dict = {
             'main_page_notes':main_page_notes,
@@ -31,19 +31,19 @@ def home(request):
 # * directory (Load in which type of directory)
 #----------------------------------------------------------
 def directory(request, post_type=None):
-    
+    # the x_directory boolean changes the return dict to
+    # whichever is loaded (blog/tutorial/etc)
     blog_directory = False
-    #search_item_type = None
-    #search_category_type = None
-    #search_identifier = None
-    #search_item_type_blog = False
-    #search_category_type_blog = False
-    # Set search types according to the post type
+    
+    # load in the variables if the directory type is blog
     if post_type == 'blog':
         search_item_type = 'BlogPost'
         search_category_type = 'BlogCategory'
         blog_directory = True
 
+    # Declare/clear the directory return variables
+    #   if we don't do this, then the response_dict will
+    #   error.
     directory_item = None
     directory_category = None
     directory_sides = None
