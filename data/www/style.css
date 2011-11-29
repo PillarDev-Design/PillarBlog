@@ -7,10 +7,11 @@
  * Default Overrides 
  * ------------------------------------------------*/
 body, html {
-    background: #f7f7f7;
-    font-family: Arial, Verdana, sans-serif;
+    background: #f7f7f7 url(concrete_wall_2.png);
+    font-family: 'Knewave', cursive;
     margin: 0;
     padding: 0;
+    
 }
 
 a {
@@ -58,23 +59,30 @@ pre {
  * Logo
  * ------------------------------------------------*/
 #logo_wrapper {
-    margin:0 0 1em 0;
-    text-align:center;
+    border-bottom:10px ridge #666666;
+    border-top:10px ridge #666666;
+    margin:0 0 0 0;
+    text-align:left;
 }
 #logo_wrapper h1 {
     color:#505050;
+    font-family: 'Passero One', cursive;
     font-size:3em;
+    font-weight:bold;
     margin:0;
+    text-shadow:0 1px 5px #303030;
 }
 
 /* --------------------------------------------------
  * Site Navigation
  * ------------------------------------------------*/
-#site_nav_wrapper {
-    border-bottom:1px solid #343434;
+#site_nav_wrapper {    
     border-top:1px solid #343434;
-    padding:.5em .3em;
-    text-align:center;
+    padding:.9em .3em;
+    position:absolute;
+    right:0;
+    text-align:right;
+    top:0;
 }
 #site_nav_wrapper a{
     display: inline;
@@ -87,12 +95,18 @@ pre {
  * Main Content
  * ------------------------------------------------*/
 #content_wrapper {
+    font-family: 'Give You Glory', cursive;
+    position:relative;
 }
+    #content_wrapper h2{
+        font-weight:bold;
+    }
+
     #left_side_wrapper {
-        border-right:1px solid #343434;
+        
         float:left;
-        margin: 0 2% 0 0;
-        padding: 0 1%;
+        margin: 0 0 0 0;
+        padding: 0 0;
         width:20%;
     }
         #left_side_wrapper a{
@@ -103,9 +117,10 @@ pre {
             border-bottom:1px solid #343434;
         }
     #right_side_wrapper {
+        background: #f7f7f7 url(lined_paper.png);
         float:left;
-        padding:0 1%;
-        width:70%;
+        padding:0 0;
+        width:80%;
     }
 
 

@@ -4,23 +4,23 @@
 <div id='content_wrapper'>
     <div id='left_side_wrapper'>
         <div id='recent_blog_post'>
-            <h3>Recent Blog Posts</h3>
+            <h2>Recent Blog Posts</h2>
             {% for blog in front_page_blogs %}
-                <h6>
+                <h3>
                     <a href='/blog/{{blog.slug}}'
                         title='{{blog.title}}'>{{blog.title}}</a><br />
                     {{blog.description}}
-                <h6>
+                <h3>
             {% endfor %}
         </div>
     </div>
     <div id='right_side_wrapper'>
         <div id='content'>
-            <center><h3>Welcome to Pillar Dev & Designs.</h3></center>
+            <center><h2>Welcome to Pillar Dev & Designs.</h2></center>
             {% for main_page_note in main_page_notes %}
-                <h6>
+                <h3>
                     {{main_page_note.content}}
-                </h6>
+                </h3>
             {% endfor %} 
         </div>
     </div>

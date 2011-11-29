@@ -4,17 +4,24 @@
         <meta charset='UTF-8'>
         <title>Pillar Dev & Designs</title>
         <link href='/staticfiles/style.css' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Knewave'
+            rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Passero+One'
+            rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Give+You+Glory'
+            rel='stylesheet' type='text/css'>
     </head>
     <body>
         <!-- Logo Wrapper -->
         <div id='logo_wrapper'>
             <h1>Pillar Development & Designs</h1>
+            <!-- Site Navigation -->
+            <div id='site_nav_wrapper'>
+                <a href='/' title='Home'>Home</a>
+                <a href='/directory/blog/' title='Blogs'>Blogs</a>
+            </div>
         </div>
-        <!-- Site Navigation -->
-        <div id='site_nav_wrapper'>
-            <a href='/' title='Home'>Home</a>
-            <a href='/directory/blog/' title='Blogs'>Blogs</a>
-        </div>
+        <div class='clear'></div>
         <!-- Block Content -->
         {% block content %}{% endblock content %}
         <!-- Footer -->

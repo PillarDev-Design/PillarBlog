@@ -5,13 +5,13 @@
     <div id='left_side_wrapper'>
         <div id='recent_blog_post'>
             {% if blog_directory %}
-                <h3>Recent Blog Posts</h3>
+                <h2>Recent Blog Posts</h2>
                 {% for blog_side in directory_sides %}
-                    <h6>
+                    <h3>
                         <a href='/blog/{{blog_side.slug}}'
                             title='{{blog_side.title}}'>{{blog_side.title}}</a><br />
                         {{blog_side.description}}
-                    </h6>
+                    </h3>
                 {% endfor %}
             {% endif %}
         </div>
@@ -19,9 +19,9 @@
     <div id='right_side_wrapper'>
         <div id='content'>
             {% if blog_directory %}
-                <h3>Blog Directory</h3>
+                <h2>Blog Directory</h2>
                 {% for blog_category in directory_category %}
-                    <h3>{{blog_category.category}}</h3>
+                    <h2>{{blog_category.category}}</h2>
                     {% for blog_item in blog_category.blogpost_set.all %}
                         <a href='/blog/{{blog_item.slug}}'
                             title='{{blog_item.title}}'>{{blog_item.title}}</a><br />
