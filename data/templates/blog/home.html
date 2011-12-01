@@ -3,25 +3,35 @@
 
 <div id='content_wrapper'>
     <div id='left_side_wrapper'>
-        <div id='recent_blog_post'>
-            <h2>Recent Blog Posts</h2>
-            {% for blog in front_page_blogs %}
-                <h3>
-                    <a href='/blog/{{blog.slug}}'
-                        title='{{blog.title}}'>{{blog.title}}</a><br />
-                    {{blog.description}}
-                <h3>
-            {% endfor %}
+        <div id='recent_blog_post_wrapper'>
+            <div id='recent_blog_post_title'>
+                Recent Blog Posts
+            </div>
+            <div id='recent_blog_post_content'>
+                {% for blog in front_page_blogs %}
+                    <center><a href='/blog/{{blog.slug}}'
+                            title='{{blog.title}}'>{{blog.title}}</a></center>
+                        {{blog.description}}
+                    <hr />
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div id='right_side_wrapper'>
         <div id='content'>
-            <center><h2>Welcome to Pillar Dev & Designs.</h2></center>
-            {% for main_page_note in main_page_notes %}
-                <h3>
-                    {{main_page_note.content}}
-                </h3>
-            {% endfor %} 
+            <div id='main_page_notes_wrapper'>
+                <div id='main_page_notes_title'>
+                    <h2>Welcome to Pillar Dev & Designs.</h2>
+                </div>
+                <div id='main_page_notes_content'>
+                    {% for main_page_note in main_page_notes %}
+                        <h5>
+                            {{main_page_note.content}}
+                        </h5>
+                        <hr />
+                    {% endfor %} 
+                </div>
+            </div>
         </div>
     </div>
     <div class='clear'></div>

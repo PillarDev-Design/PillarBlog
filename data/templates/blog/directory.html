@@ -3,33 +3,64 @@
 
 <div id='content_wrapper'>
     <div id='left_side_wrapper'>
-        <div id='recent_blog_post'>
+        <div id='recent_blog_post_wrapper'>
+            <!-- The following customizes the left side content to
+                whichever content (blog, etc.) the directory points to -->
             {% if blog_directory %}
-                <h2>Recent Blog Posts</h2>
-                {% for blog_side in directory_sides %}
-                    <h3>
-                        <a href='/blog/{{blog_side.slug}}'
-                            title='{{blog_side.title}}'>{{blog_side.title}}</a><br />
-                        {{blog_side.description}}
-                    </h3>
-                {% endfor %}
+                <div id='recent_blog_post_title'>
+                    Recent Blog Posts
+                </div>
+                <div id='recent_blog_post_content'>
+                    {% for blog_side in directory_sides %}
+                    <center><a href='/blog/{{blog_side.slug}}'
+                            title='{{blog_side.title}}'>{{blog_side.title}}</a></center>
+                            {{blog_side.description}}
+                        <hr />
+                    {% endfor %}
+                </div>
             {% endif %}
+            <!-- END BLOG LEFT SIDE CONTENT -->
         </div>
     </div>
     <div id='right_side_wrapper'>
         <div id='content'>
-            {% if blog_directory %}
-                <h2>Blog Directory</h2>
-                {% for blog_category in directory_category %}
-                    <h2>{{blog_category.category}}</h2>
-                    {% for blog_item in blog_category.blogpost_set.all %}
-                        <a href='/blog/{{blog_item.slug}}'
-                            title='{{blog_item.title}}'>{{blog_item.title}}</a><br />
-                        {{blog_item.description}}<br />
-                    {% endfor %}
-                    <hr />
-                {% endfor %}
-            {% endif %}
+            <!-- The following customizes the content to whichever
+                content (blog, etc.) the directory points -->
+                <!-- BEGIN BLOG DIRECTORY CONTENT -->
+            <div id='directory_content_blog_wrapper'>
+                {% if blog_directory %}
+                    <div id='directory_content_blog_title'>
+                        <h2>Blog Directory</h2>
+                    </div>
+                    <div id='directory_content_blog_content'>
+                        {% for blog_category in directory_category %}
+                            <h2>{{blog_category.category}}</h2>
+                            {% for blog_item in blog_category.blogpost_set.all %}
+                                <div id='directory_content_blog_content_table'>
+                                    <table>
+                                        <tr class='yellow'>
+                                            <td>Blog Title</td>
+                                            <td>Description</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href='/blog/{{blog_item.slug}}'
+                                                    title='{{blog_item.title}}'>{{blog_item.title}}</a><br />
+                                            </td>
+                                            <td>
+                                                {{blog_item.description}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            {% endfor %}
+                            <div class='clear'></div>
+                            <hr />
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <!-- END BLOG DIRECTORY CONTENT -->    
         </div>
     </div>
     <div class='clear'></div>
