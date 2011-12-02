@@ -250,6 +250,61 @@ pre {
                     text-align:center;
                 }
 
+    /* about page */
+    #about_page_content_wrapper {
+        width:100%;
+    }
+    #about_page_content_title {
+        font-family: 'Give You Glory', cursive;
+        font-size: 2.3em;
+        font-weight:bold;
+        left: 300px;
+        position: relative;
+        top: 30px;
+    }
+    #about_page_content_picture_one {
+        background: url(Nabors1.jpg) no-repeat;
+        float:right;
+        height:604px;
+        position:relative;
+        top: 60px;
+        width:453px;
+    }
+    #about_page_content_vertical_tape_one {
+        background: url(tape_vertical.png) no-repeat;
+        height:152px;
+        left: 485px;
+        position:relative;
+        top: 110px;
+        width:43px;
+    }
+    #about_page_content_vertical_tape_two {
+        background: url(tape_vertical.png) no-repeat;
+        height:152px;
+        left: 935px;
+        position:relative;
+        top: 220px;
+        width:43px;
+    }
+    #about_page_content_horizontal_tape_one {
+        background: url(tape_horizontal.png) no-repeat;
+        height:43px;
+        left: 700px;
+        position:relative;
+        top: -265px;
+        width:152px;
+    }
+    #about_page_content_content {
+        position:relative;
+        float:left;
+        top: -300px;
+    }
+        #about_page_content_content_title {
+            font-size: 1.5em;
+            left: 200px;
+            position:relative;
+        }
+
 /* --------------------------------------------------
  * Footer
  * ------------------------------------------------*/
