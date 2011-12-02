@@ -41,7 +41,7 @@ urlpatterns = patterns('',
     #----------------------------------------------------------
     # About
     # About page
-    #url(r'^about/', 'blog.views.about'),
+    url(r'^about/', 'blog.views.about'),
     #----------------------------------------------------------
     
 )

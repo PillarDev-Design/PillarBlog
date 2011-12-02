@@ -105,3 +105,16 @@ def search(request, post_type):
             'search_item_type':search_item_type,
             'search_items':search_items,
             }
+
+#----------------------------------------------------------
+# * about (About page)
+#----------------------------------------------------------
+def about(request): 
+    side_blogs = models.BlogPost.objects.all().order_by('-pub_date')[:5]
+    side_tutorials = models.TutorialPost.objects.all().order_by('-pub_date')[:5]
+    
+    response_dict = {
+            'side_blogs':side_blogs,
+            'side_tutorials':side_tutorials,
+            }
+    return render_to_response('blog/about.html', response_dict)

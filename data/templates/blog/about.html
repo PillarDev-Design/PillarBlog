@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+<div id='content_wrapper'>
+    <div id='left_side_wrapper'>
+        <div id='recent_post_wrapper_about' class='recent_post_wrapper'>
+            <div id='recent_post_title_blog' class='recent_post_title'>
+                Blog Posts
+            </div>
+            <div id='recent_post_content_blog' class=recent_post_content'>
+                {% for blog in side_blogs %}
+                    <a href='/blog/{{blog.slug}}'
+                        title='{{blog.title}}'>{{blog.title}}</a>
+                    <br />
+                    {{blog.description}}
+                    <hr />
+                {% endfor %}
+                <div id='side_hole'>
+                </div>
+            </div>
+            <br />
+            <div id='recent_post_title_tutorial' class='recent_post_title'>
+                Tutorial Posts
+            </div>
+            <div id='recent_post_content_tutorial' class='recent_post_content'>
+                {% for tutorial in side_tutorials %}
+                    <a href='/tutorial/{{tutorial.slug}}'
+                        title='{{tutorial.title}}'>{{tutorial.title}}</a>
+                    <br />
+                    {{tutorial.description}}
+                    <hr />
+                {% endfor %}
+                <div id='side_hole'>
+                </div>
+            </div>
+        </div> <!-- END RECENT POST WRAPPER -->
+    </div> <!-- END LEFT SIDE WRAPPER -->
+    <div id='right_side_wrapper'>
+        <div id='content'>
+            This is the content on the about page.
+        </div>
+    </div>
+    <div class='clear'></div>
+</div>
+
+{% endblock content %}
