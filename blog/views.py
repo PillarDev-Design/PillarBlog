@@ -19,11 +19,13 @@ def home(request):
     main_page_notes = models.MainPageNote.objects.all().order_by('-pub_date')[:5]
     post_type = models.PostType.objects.all()
     front_page_blogs = models.BlogPost.objects.all().order_by('-pub_date')[:5]
+    front_page_tutorials = models.TutorialPost.objects.all().order_by('-pub_date')[:5]
     
     response_dict = {
             'main_page_notes':main_page_notes,
             'post_type':post_type,
             'front_page_blogs':front_page_blogs,
+            'front_page_tutorials':front_page_tutorials,
             }
     return render_to_response('blog/home.html', response_dict)
 
@@ -34,12 +36,19 @@ def directory(request, post_type=None):
     # the x_directory boolean changes the return dict to
     # whichever is loaded (blog/tutorial/etc)
     blog_directory = False
+    tutorial_directory = False
     
     # load in the variables if the directory type is blog
     if post_type == 'blog':
         search_item_type = 'BlogPost'
         search_category_type = 'BlogCategory'
         blog_directory = True
+
+    # load in the variables if the directory type is tutorial
+    if post_type == 'tutorials':
+        search_item_type = 'TutorialPost'
+        search_category_type = 'TutorialCategory'
+        tutorial_directory = True
 
     # Declare/clear the directory return variables
     #   if we don't do this, then the response_dict will
@@ -55,6 +64,7 @@ def directory(request, post_type=None):
 
     response_dict = {
             'blog_directory':blog_directory,
+            'tutorial_directory':tutorial_directory,
             'directory_item':directory_item,
             'directory_category':directory_category,
             'directory_sides':directory_sides,

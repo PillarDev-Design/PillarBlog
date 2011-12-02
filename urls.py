@@ -15,18 +15,29 @@ urlpatterns = patterns('',
     # Homepage
     url(r'^$', 'blog.views.home'), 
     #----------------------------------------------------------
-    
+
+
+    #----------------------------------------------------------
+    # Directory
+    url(r'^directory/(?P<post_type>.+)/', 'blog.views.directory'),
+    #----------------------------------------------------------
+
     #----------------------------------------------------------
     # Blogs
-    # Blog directory
-    url(r'^directory/(?P<post_type>.+)/', 'blog.views.directory'),
-    #url(r'^blogs/', 'blog.views.blogs'),
     # Blog search page
     #url(r'^blog_search/', 'blog.views.blog_search'),
     # Blog post page
     #url(r'^blog/(?P<target_slug>.+)$', 'blog.views.get_blog'), 
     #----------------------------------------------------------
  
+    #----------------------------------------------------------
+    # Tutorials
+    # Tutorial search page
+    #url(r'^blog_search/', 'blog.views.blog_search'),
+    # Tutorial post page
+    #url(r'^blog/(?P<target_slug>.+)$', 'blog.views.get_blog'), 
+    #----------------------------------------------------------
+
     #----------------------------------------------------------
     # About
     # About page

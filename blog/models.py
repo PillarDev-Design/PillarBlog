@@ -52,3 +52,29 @@ class BlogPost(models.Model):
     category = models.ForeignKey(BlogCategory)
     def __unicode__(self):
         return "%s %s %s" % (self.title, self.update_date, self.slug)
+
+#----------------------------------------------------------
+# TutorialCategory
+# * This model will be the categories of the tutorial posts
+#----------------------------------------------------------
+class TutorialCategory(models.Model):
+    category = models.CharField(max_length=255)
+    description = models.TextField()
+    def __unicode__(self):
+        return self.category
+
+#----------------------------------------------------------
+# TutorialPost
+# * This model will contain the actual tutorial post data
+#----------------------------------------------------------
+class TutorialPost(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    description = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+    slug = models.CharField(max_length=255)
+    post_type = models.ForeignKey(PostType)
+    category = models.ForeignKey(TutorialCategory)
+    def __unicode__(self):
+        return "%s %s %s" % (self.title, self.update_date, self.slug)

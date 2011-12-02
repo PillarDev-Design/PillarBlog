@@ -3,17 +3,35 @@
 
 <div id='content_wrapper'>
     <div id='left_side_wrapper'>
-        <div id='recent_blog_post_wrapper'>
-            <div id='recent_blog_post_title'>
-                Recent Blog Posts
+        <div id='recent_post_wrapper'>
+            <div id='recent_post_title_blog' class='recent_post_title'>
+                Blog Posts
             </div>
-            <div id='recent_blog_post_content'>
+            <div id='recent_post_content_blog' class='recent_post_content'>
                 {% for blog in front_page_blogs %}
-                    <center><a href='/blog/{{blog.slug}}'
-                            title='{{blog.title}}'>{{blog.title}}</a></center>
-                        {{blog.description}}
+                    <a href='/blog/{{blog.slug}}'
+                        title='{{blog.title}}'>{{blog.title}}</a>
+                    <br />
+                    {{blog.description}}
                     <hr />
                 {% endfor %}
+                <div id='side_hole'>
+                </div>
+            </div> 
+            <br />
+            <div id='recent_post_title_tutorial' class='recent_post_title'>
+                Tutorial Posts
+            </div>
+            <div id='recent_post_content_tutorial' class='recent_post_content'>
+                {% for tutorial in front_page_tutorials %}
+                    <a href='/tutorial/{{tutorial.slug}}'
+                        title='{{tutorial.title}}'>{{tutorial.title}}</a>
+                    <br />
+                    {{tutorial.description}}
+                    <hr />
+                {% endfor %}
+                <div id='side_hole'>
+                </div>
             </div>
         </div>
     </div>
@@ -24,11 +42,10 @@
                     <h2>Welcome to Pillar Dev & Designs.</h2>
                 </div>
                 <div id='main_page_notes_content'>
-                    {% for main_page_note in main_page_notes %}
-                        <h5>
+                    {% for main_page_note in main_page_notes %}     
                             {{main_page_note.content}}
-                        </h5>
                         <hr />
+
                     {% endfor %} 
                 </div>
             </div>

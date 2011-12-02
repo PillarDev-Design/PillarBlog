@@ -4,34 +4,53 @@
         <meta charset='UTF-8'>
         <title>Pillar Dev & Designs</title>
         <link href='/staticfiles/style.css' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Knewave'
-            rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Passero+One'
             rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Give+You+Glory'
             rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Cagliostro'
+            rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <!-- Logo Wrapper -->
-        <div id='logo_wrapper'>
-            <div id='logo_wrapper_top_left'>
-            </div>
-            <div id='logo_wrapper_title'>
-                Pillar Development & Designs
+        <div id='site_container'>
+            <!-- Logo Wrapper -->
+            <div id='logo_wrapper'>
+                <div id='logo_wrapper_red_line'>
+                    <div id='logo_wrapper_top_left'>
+                    </div>
+                    <div id='logo_wrapper_title'>
+                        Pillar
+                    </div>
+                    <div class='clear'></div>
+                    <!-- Site Navigation -->
+                    <div id='site_nav_wrapper'>
+                        <div id='site_nav_wrapper_home'>
+                            <a href='/'
+                                title='Home'>Home</a>
+                        </div>
+                        <div id='site_nav_wrapper_blog'>
+                            <a href='/directory/blog/'
+                                title='Blogs'>Blogs</a>
+                        </div>
+                        <div id='site_nav_wrapper_tutorials'>
+                            <a href='/directory/tutorials/'
+                                title='Tutorials'>Tutorials</a>
+                        </div>
+                        <div id='site_nav_wrapper_about'>
+                            <a href='/about/'
+                                title='About'>About</a>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </div>
             </div>
             <div class='clear'></div>
-            <!-- Site Navigation -->
-            <div id='site_nav_wrapper'>
-                <a href='/' title='Home'>Home</a>
-                <a href='/directory/blog/' title='Blogs'>Blogs</a>
+            <!-- Block Content -->
+            {% block content %}{% endblock content %}
+            <!-- Footer -->
+            <div id='footer_wrapper'>
+                Chris Nabors | Pillar Dev & Design | RSS Feed
             </div>
-        </div>
-        <div class='clear'></div>
-        <!-- Block Content -->
-        {% block content %}{% endblock content %}
-        <!-- Footer -->
-        <div id='footer_wrapper'>
-            Chris Nabors | Pillar Dev & Design | RSS Feed
-        </div>
+        </div> <!-- END site_container DIV -->
     </body>
 </html>

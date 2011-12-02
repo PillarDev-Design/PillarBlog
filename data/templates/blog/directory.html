@@ -3,40 +3,68 @@
 
 <div id='content_wrapper'>
     <div id='left_side_wrapper'>
-        <div id='recent_blog_post_wrapper'>
-            <!-- The following customizes the left side content to
-                whichever content (blog, etc.) the directory points to -->
-            {% if blog_directory %}
-                <div id='recent_blog_post_title'>
+        <!-- The following customizes the
+            left side content to blog content -->
+        {% if blog_directory %}
+            <div id='recent_post_wrapper'>
+                <div id='recent_post_title'>
                     Recent Blog Posts
                 </div>
-                <div id='recent_blog_post_content'>
+                <div id='recent_post_content'>
                     {% for blog_side in directory_sides %}
-                    <center><a href='/blog/{{blog_side.slug}}'
-                            title='{{blog_side.title}}'>{{blog_side.title}}</a></center>
-                            {{blog_side.description}}
+                        <a href='/blog/{{blog_side.slug}}'
+                            title='{{blog_side.title}}'>{{blog_side.title}}</a>
+                        <br />
+                        {{blog_side.description}}
                         <hr />
                     {% endfor %}
                 </div>
-            {% endif %}
-            <!-- END BLOG LEFT SIDE CONTENT -->
-        </div>
-    </div>
+                <div id='side_hole'>
+                </div>
+                <br />
+            </div>
+        {% endif %}
+        <!-- END BLOG LEFT SIDE CONTENT -->
+        
+        <!-- The following customizes the
+            left side content to tutorial content -->
+        {% if tutorial_directory %}
+            <div id='recent_post_wrapper'>
+                <div id='recent_post_title'>
+                    Recent Tutorial Posts
+                </div>
+                <div id='recent_post_content'>
+                    {% for tutorial_side in directory_sides %}
+                        <a href='/blog/{{tutorial_side.slug}}'
+                            title='{{tutorial_side.title}}'>{{tutorial_side.title}}</a>
+                        <br />
+                        {{tutorial_side.description}}
+                        <hr />
+                    {% endfor %}
+                </div>
+                <div id='side_hole'>
+                </div>
+                <br />
+            </div>
+        {% endif %}
+        <!-- END BLOG LEFT SIDE CONTENT -->
+    </div> <!-- END LEFT SIDE WRAPPER -->
     <div id='right_side_wrapper'>
         <div id='content'>
             <!-- The following customizes the content to whichever
                 content (blog, etc.) the directory points -->
-                <!-- BEGIN BLOG DIRECTORY CONTENT -->
-            <div id='directory_content_blog_wrapper'>
-                {% if blog_directory %}
-                    <div id='directory_content_blog_title'>
-                        <h2>Blog Directory</h2>
+            <!-- BEGIN BLOG DIRECTORY CONTENT -->
+            {% if blog_directory %}
+                <div id='directory_content_wrapper'>
+                    <div id='directory_content_title'>
+                        Blog Directory
+                        <hr />
                     </div>
-                    <div id='directory_content_blog_content'>
+                    <div id='directory_content_content'>
                         {% for blog_category in directory_category %}
                             <h2>{{blog_category.category}}</h2>
                             {% for blog_item in blog_category.blogpost_set.all %}
-                                <div id='directory_content_blog_content_table'>
+                                <div id='directory_content_content_table'>
                                     <table>
                                         <tr class='yellow'>
                                             <td>Blog Title</td>
@@ -55,12 +83,51 @@
                                 </div>
                             {% endfor %}
                             <div class='clear'></div>
+                            <br />
+                            <hr />
+                            <br />
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <!-- END BLOG DIRECTORY CONTENT -->
+
+            <!-- BEGIN TUTORIAL DIRECTORY CONTENT -->
+            {% if tutorial_directory %}
+                <div id='directory_content_wrapper'>
+                    <div id='directory_content_title'>
+                        Tutorial Directory
+                        <hr />
+                    </div>
+                    <div id='directory_content_content'>
+                        {% for tutorial_category in directory_category %}
+                            <h2>{{tutorial_category.category}}</h2>
+                            {% for tutorial_item in tutorial_category.tutorialpost_set.all %}
+                                <div id='directory_content_content_table'>
+                                    <table>
+                                        <tr class='yellow'>
+                                            <td>Tutorial Title</td>
+                                            <td>Description</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href='/tutorial/{{tutorial_item.slug}}'
+                                                    title='{{tutorial_item.title}}'>{{tutorial_item.title}}</a><br />
+                                            </td>
+                                            <td>
+                                                {{tutorial_item.description}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            {% endfor %}
+                            <div class='clear'></div>
                             <hr />
                         {% endfor %}
                     </div>
-                {% endif %}
-            </div>
-            <!-- END BLOG DIRECTORY CONTENT -->    
+                </div>
+            {% endif %}
+            <!-- END BLOG DIRECTORY CONTENT -->
         </div>
     </div>
     <div class='clear'></div>
