@@ -155,7 +155,7 @@ pre {
         top:10px;
         width:50px;
     }
-        #recent_post_wrapper {
+        .recent_post_wrapper {
             border-bottom:1px solid #343434;
             padding:15px 0 15px 0; 
         }
@@ -197,55 +197,55 @@ pre {
                 font-family: 'Cagliostro', sans-serif;
             }
         /* directory_content */
-        #directory_content_wrapper {
+        .directory_content_wrapper {
         }
-            #directory_content_title {
+            .directory_content_title {
                 font-family: 'Give You Glory', cursive;
                 font-size: 2.2em;
                 font-weight: bold;
                 text-align: center;
             }
-            #directory_content_content {
+            .directory_content_content {
                 font-family: 'Cagliostro', sans-serif;
             }
-                #directory_content_content h2{
+                .directory_content_content h2{
                     font-family: 'Give You Glory', cursive;
                 }
-                #directory_content_content_table {
+                .directory_content_content_table {
                     float:left;
                     margin: 0px 5px 0px 5px;
                     position:relative;
                 }
-                #directory_content_content_table a{
+                .directory_content_content_table a{
                     font-size:1.6em;
                     font-weight:bold;
                     font-family: 'Give You Glory', cursive;
                 }
-                #directory_content_content_table table{
+                .directory_content_content_table table{
                     border: 1px solid black;
                     border-bottom: 2px solid black;
                     border-collapse: collapse;
                     font: .9em 'Cagliostro', sans-serif;
                     width:320px;
                 }
-                #directory_content_content_table th{
+                .directory_content_content_table th{
                     padding: 0 0.5em;
                     text-align:left;
                 }
-                #directory_content_content_table tr.yellow td{
+                .directory_content_content_table tr.yellow td{
                     background:#FFC;
                     border-top:1px solid black;
                     border-bottom:1px solid black;
                     
                 }
-                #directory_content_content_table td{
+                .directory_content_content_table td{
                     border-bottom:1px solid #CCC;
                     padding: 0 0.5em;
                 }
-                #directory_content_content_table td:first-child {
+                .directory_content_content_table td:first-child {
                     width: 190px;
                 }
-                #directory_content_content_table td+td{
+                .directory_content_content_table td+td{
                     border-left:1px solid #CCC;
                     text-align:center;
                 }

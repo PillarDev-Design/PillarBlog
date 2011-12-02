@@ -6,11 +6,11 @@
         <!-- The following customizes the
             left side content to blog content -->
         {% if blog_directory %}
-            <div id='recent_post_wrapper'>
-                <div id='recent_post_title'>
+            <div id='recent_post_wrapper_blog' class='recent_post_wrapper'>
+                <div id='recent_post_title_blog' class='recent_post_title'>
                     Recent Blog Posts
                 </div>
-                <div id='recent_post_content'>
+                <div id='recent_post_content_blog' class='recent_post_content'>
                     {% for blog_side in directory_sides %}
                         <a href='/blog/{{blog_side.slug}}'
                             title='{{blog_side.title}}'>{{blog_side.title}}</a>
@@ -29,11 +29,11 @@
         <!-- The following customizes the
             left side content to tutorial content -->
         {% if tutorial_directory %}
-            <div id='recent_post_wrapper'>
-                <div id='recent_post_title'>
+            <div id='recent_post_wrapper_tutorial' class='recent_post_wrapper'>
+                <div id='recent_post_title_tutorial' class='recent_post_title'>
                     Recent Tutorial Posts
                 </div>
-                <div id='recent_post_content'>
+                <div id='recent_post_content_tutorial' class='recent_post_content'>
                     {% for tutorial_side in directory_sides %}
                         <a href='/blog/{{tutorial_side.slug}}'
                             title='{{tutorial_side.title}}'>{{tutorial_side.title}}</a>
@@ -55,79 +55,85 @@
                 content (blog, etc.) the directory points -->
             <!-- BEGIN BLOG DIRECTORY CONTENT -->
             {% if blog_directory %}
-                <div id='directory_content_wrapper'>
-                    <div id='directory_content_title'>
-                        Blog Directory
-                        <hr />
-                    </div>
-                    <div id='directory_content_content'>
-                        {% for blog_category in directory_category %}
-                            <h2>{{blog_category.category}}</h2>
-                            {% for blog_item in blog_category.blogpost_set.all %}
-                                <div id='directory_content_content_table'>
-                                    <table>
-                                        <tr class='yellow'>
-                                            <td>Blog Title</td>
-                                            <td>Description</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href='/blog/{{blog_item.slug}}'
-                                                    title='{{blog_item.title}}'>{{blog_item.title}}</a><br />
-                                            </td>
-                                            <td>
-                                                {{blog_item.description}}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            {% endfor %}
-                            <div class='clear'></div>
-                            <br />
-                            <hr />
-                            <br />
-                        {% endfor %}
-                    </div>
+            <div id='directory_content_wrapper_blog' class='directory_content_wrapper'>
+                <div id='directory_content_title_blog' class='directory_content_title'>
+                    Blog Directory
+                    <hr />
                 </div>
+                <div id='directory_content_content_blog'
+                    class='directory_content_content'>
+                    {% for blog_category in directory_category %}
+                        <h2>{{blog_category.category}}</h2>
+                        {% for blog_item in blog_category.blogpost_set.all %}
+                            <div id='directory_content_content_table_blog'
+                                class='directory_content_content_table'>
+                                <table>
+                                    <tr class='yellow'>
+                                        <td>Blog Title</td>
+                                        <td>Description</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href='/blog/{{blog_item.slug}}'
+                                                title='{{blog_item.title}}'>{{blog_item.title}}</a><br />
+                                        </td>
+                                        <td>
+                                            {{blog_item.description}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {% endfor %}
+                        <div class='clear'></div>
+                        <br />
+                        <hr />
+                        <br />
+                    {% endfor %}
+                </div>
+            </div>
             {% endif %}
             <!-- END BLOG DIRECTORY CONTENT -->
 
             <!-- BEGIN TUTORIAL DIRECTORY CONTENT -->
             {% if tutorial_directory %}
-                <div id='directory_content_wrapper'>
-                    <div id='directory_content_title'>
-                        Tutorial Directory
-                        <hr />
-                    </div>
-                    <div id='directory_content_content'>
-                        {% for tutorial_category in directory_category %}
-                            <h2>{{tutorial_category.category}}</h2>
-                            {% for tutorial_item in tutorial_category.tutorialpost_set.all %}
-                                <div id='directory_content_content_table'>
-                                    <table>
-                                        <tr class='yellow'>
-                                            <td>Tutorial Title</td>
-                                            <td>Description</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href='/tutorial/{{tutorial_item.slug}}'
-                                                    title='{{tutorial_item.title}}'>{{tutorial_item.title}}</a><br />
-                                            </td>
-                                            <td>
-                                                {{tutorial_item.description}}
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            {% endfor %}
-                            <div class='clear'></div>
-                            <hr />
-                        {% endfor %}
-                    </div>
+            <div id='directory_content_wrapper_tutorial' class='directory_content_wrapper'>
+                <div id='directory_content_title_tutorial' class='directory_content_title'>
+                    Tutorial Directory
+                    <hr />
                 </div>
+                <div id='directory_content_content_tutorial'
+                    class='directory_content_content'>
+                    {% for tutorial_category in directory_category %}
+                        <h2>{{tutorial_category.category}}</h2>
+                        {% for tutorial_item in tutorial_category.tutorialpost_set.all %}
+                            <div id='directory_content_content_table_tutorial'
+                                class='directory_content_content_table'>
+                                <table>
+                                    <tr class='yellow'>
+                                        <td>Blog Title</td>
+                                        <td>Description</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href='/tutorial/{{tutorial_item.slug}}'
+                                                title='{{tutorial_item.title}}'>{{tutorial_item.title}}</a><br />
+                                        </td>
+                                        <td>
+                                            {{tutorial_item.description}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {% endfor %}
+                        <div class='clear'></div>
+                        <br />
+                        <hr />
+                        <br />
+                    {% endfor %}
+                </div>
+            </div>
             {% endif %}
-            <!-- END BLOG DIRECTORY CONTENT -->
+            <!-- END TUTORIAL DIRECTORY CONTENT -->
         </div>
     </div>
     <div class='clear'></div>
