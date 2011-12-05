@@ -277,47 +277,72 @@ pre {
             width:453px;
         }
         #about_page_content_vertical_tape_one {
-            background: url(tape_vertical.png) no-repeat;
-            height:152px;
             left:-25px;
-            position:relative;
             top:25px;
-            width:43px;
         }
         #about_page_content_vertical_tape_two {
-            background: url(tape_vertical.png) no-repeat;
-            height:152px;
             left:430px;
-            position:relative;
             top:250px;
-            width:43px;
         }
         #about_page_content_horizontal_tape_one {
-            background: url(tape_horizontal.png) no-repeat;
-            height:43px;
             left:180px;
-            position:relative;
             top:-330px;
-            width:152px;
         }
         #about_page_content_horizontal_tape_two {
-            background: url(tape_horizontal.png) no-repeat;
-            height:43px;
             left: 70px;
-            position:relative;
             top:240px;
-            width:152px;
-        }
-    #about_page_content_content {
+        } 
+    #about_page_content_picture_wrapper_two {
+        float:left;
+        height: 446px;
+        margin: 0 0 0 50px;
         position:relative;
+        width:289px;
+    }
+        #about_page_content_picture_two {
+            background: url(band.jpg) no-repeat;
+            height:446px;
+            position:relative;
+            width:289px;
+        }
+        #about_page_content_vertical_tape_three {
+            left:-25px;
+            top:-450px;
+        }
+        #about_page_content_horizontal_tape_three {
+            left:60px;
+            top:-180px;
+        }
+    .about_page_content_vertical_tape {
+        background: url(tape_vertical.png) no-repeat;
+        height:152px;
+        position:relative;
+        width:43px;
+    }
+    .about_page_content_horizontal_tape {
+        background: url(tape_horizontal.png) no-repeat;
+        height:43px;
+        position:relative;
+        width:152px;
+    }
+    #about_page_content_content {
+        position:absolute;
         float:left;
         padding: 50px 0 0 0;
     }
-        #about_page_content_content_title {
+        .about_page_content_content_title {
             font-size: 1.5em;
             left: 200px;
             position:relative;
         }
+        #about_page_activities_wrapper {
+            width:800px;
+        }
+            #about_page_content_content_title_activities {
+                padding: 0 0 0 300px;
+            }
+            #about_page_content_content_activities_wrapper {
+            }
 
 /* --------------------------------------------------
  * Footer
